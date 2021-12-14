@@ -16,7 +16,7 @@ EXEAT="12:00"
     DATE=`/bin/date +%H:%M`
     if [ $DATE = $EXEAT ]
     then
-         trap "./Trap.sh" SIGINT SIGTERM	
+         trap "./sub5.sh" SIGINT SIGTERM	
         /home/aws/sub2.sh
         sleep 1&;
         /home/aws/sub3.sh
