@@ -18,9 +18,9 @@ EXEAT="12:00"
     then
          trap "./sub5.sh" SIGINT SIGTERM	
         /home/aws/sub2.sh
-        sleep 1&;
+        sleep 1&
         /home/aws/sub3.sh
-        sleep 1&;
+        sleep 1&
        /home/aws/sub4.sh
      break
     fi
