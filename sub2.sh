@@ -1,5 +1,5 @@
 # !/bin/sh
-# File name performance.sh
+# File name sub2.sh
 Usage()
 {
 du -h > disk_usage.txt

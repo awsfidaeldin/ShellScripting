@@ -1,5 +1,5 @@
 # !/bin/sh
-# File name execute.sh
+# File name sub1.sh
 
 Intro_Script()
 {
@@ -16,7 +16,11 @@ EXEAT="12:00"
     DATE=`/bin/date +%H:%M`
     if [ $DATE = $EXEAT ]
     then	
-        /home/aws/performance.sh
+        /home/aws/sub2.sh
+        sleep 1&;
+        /home/aws/sub3.sh
+        sleep 1&;
+       /home/aws/sub4.sh
      break
     fi
 done

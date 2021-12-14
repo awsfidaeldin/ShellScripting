@@ -1,3 +1,6 @@
+# !/bin/sh
+# File name sub4.sh
+
 d=`date +%d%m%y`
 mkdir $d
 find /home/qustudent/dir1 -perm  700 -exec cp  {} /home/qustudent/backup \;
