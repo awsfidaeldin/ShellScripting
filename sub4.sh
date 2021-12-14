@@ -3,11 +3,11 @@
 
 d=`date +%d%m%y`
 mkdir $d
-find /home/qustudent/dir1 -perm  700 -exec cp  {} /home/qustudent/backup \;
+find /home/aws/dir1 -perm  700 -exec cp  {} /home/aws/backup \;
 cd $d
 chmod 500 $d/*
 
-sudo find /home/qustudent -type f -size +100M > HOLDFILE.txt
+sudo find /home/aws -type f -size +100M > HOLDFILE.txt
 
 speedtest > Results
 
