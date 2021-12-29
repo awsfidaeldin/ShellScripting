@@ -1,7 +1,7 @@
 ﻿# !/bin/sh
 # File name sub3.sh
-# AUTHOR: Aws
-# DATE: 12/25/2019
+# AUTHOR: Me
+# DATE: 12/25/2020
 # PURPOSE: This script is used to search for files that are larger than $1 Meg. Bytes. The search starts at the current directory that the user is in, `pwd`, and includes files in and below the user’s current directory. The output is both displayed to the user and stored in a file for later review.
 #
 SCRIPT_NAME=$(basename $0)
