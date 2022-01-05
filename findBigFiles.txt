@@ -1,0 +1,43 @@
+#!/bin/bash
+function usage
+{
+	echo "You have used the script incorrectly"
+	echo "USAGE: ./findBigFiles [number of bytes]"
+}
+function trap_exit
+{
+	echo -e "\n******************"
+	echo -e "Exiting on a trap signal"
+	echo -e "\n******************"
+}
+#Time and Date in UTC time 
+DATESTAMP=$(date -u +"%h%d,%Y,%T")
+echo $DATESTAMP
+SEARCH_PATH=$(pwd)
+FILE_SIZE=$1
+ 
+trap 'trap_exit; exit 2' 1 2 3 15
+
+if [ $# -ne 1 ]
+then
+	usage
+	exit 1
+fi
+
+#Find files greater than a certain size, c after FILE_SIZE 
+#indicates bytes, m indicates Megabytes
+find -H $SEARCH_PATH -type f -size +"$FILE_SIZE"c > temp1.txt
+
+if [ -s temp1.txt ]
+then
+	num_lines=$(cat temp1.txt | wc -l)
+	echo "Number of files found : $num_lines"
+	echo "Files found are: "
+	cat temp1.txt | more
+else
+	echo "No files were found that are larger than $1 bytes"
+	echo "Exiting"
+fi
+rm temp1.txt
+
+
