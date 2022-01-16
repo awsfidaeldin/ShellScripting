@@ -1,15 +1,9 @@
 usage()
 
-{
-    
-script=$1
-    shift
-
-    
-echo "Usage: `basename $script` $*" 1>&2
-    
-exit 2
-
+{   
+    script=$1
+    echo "Usage: `basename $script` $*" 1>&2 
+    exit 2
 }
 
 
